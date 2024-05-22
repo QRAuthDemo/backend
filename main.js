@@ -41,7 +41,7 @@ app.get('/user/mobileNumber', async (request, reply) => {
         reply.send({ mobileNumber: user.mobileNumber });
     } catch (error) {
         // Return an error response
-        reply.status(500).send({ error: 'Internal Server Error' });
+        reply.status(500).send({ error: error });
     }
 });
 
@@ -111,7 +111,7 @@ app.post('/login', async (request, reply) => {
 });
 
 // Start the server
-app.listen({ port: 3000, host: '0.0.0.0' }, (err) => {
+app.listen({ port: 3000, host: "0.0.0.0" }, (err) => {
     if (err) {
         console.error(err);
         process.exit(1);
@@ -129,7 +129,7 @@ function getLoginAnswer(mobileNumber, secret) {
 
     const payload = { userId: mobileNumber };
     const secretKey = 'my_secret_key';
-    const expiresIn = '1h';
+    const expiresIn = '12h';
     const authenticatorUrl = `otpauth://totp/QRAuthDemo:${mobileNumber}?secret=${secret}&issuer=QRAuthDemo`;
     const authenticatorQRCode = createQRCode(authenticatorUrl);
 
