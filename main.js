@@ -11,7 +11,7 @@ authenticator.options = { digits: 6 ,window:5};
 
 // Connect to MongoDB
 
-const mongo = new MongoClient('mongodb://root:L3ebIFaie9A64ao2FkEXDOGK@alvand.liara.cloud:31373/my-app?authSource=admin');
+const mongo = new MongoClient('mongodb://root:L3ebIFaie9A64ao2FkEXDOGK@qrauthdemomongo:27017/my-app?authSource=admin');
 
 // Create a Fastify instance
 const app = Fastify({
